@@ -1,6 +1,5 @@
 <script lang="ts">
-	import { env } from '$lib/utils/env';
-	console.log(env.PUBLIC_TEST);
+	// import { env } fro$lib/utils/variables';
 </script>
 
 <h1>Welcome to SvelteKit</h1>

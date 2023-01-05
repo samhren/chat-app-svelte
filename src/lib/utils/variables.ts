@@ -7,7 +7,8 @@ import * as publicEnv from '$env/static/public';
 
 const schema = z.object({
 	// Add your public env variables here
-	PUBLIC_TEST: z.coerce.number()
+	PUBLIC_SUPABASE_URL: z.string().url(),
+	PUBLIC_SUPABASE_ANON_KEY: z.string()
 });
 
 const parsed = schema.safeParse(publicEnv);
