@@ -8,7 +8,9 @@ import * as publicEnv from '$env/static/public';
 const schema = z.object({
 	// Add your public env variables here
 	PUBLIC_SUPABASE_URL: z.string().url(),
-	PUBLIC_SUPABASE_ANON_KEY: z.string()
+	PUBLIC_SUPABASE_ANON_KEY: z.string().regex(new RegExp('^\\S*$'), {
+		message: 'No spaces allowed'
+	})
 });
 
 const parsed = schema.safeParse(publicEnv);
