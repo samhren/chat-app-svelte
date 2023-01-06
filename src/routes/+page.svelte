@@ -1,6 +1,18 @@
 <script lang="ts">
-	// import { env } fro$lib/utils/variables';
+	import type { PageData } from './$types'
+
+	export let data: PageData
 </script>
 
-<h1>Welcome to SvelteKit</h1>
-<p>Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation</p>
+<main>
+	<h1>SvelteKit & Tailwind & Supabase & Prisma & Typescript Starter</h1>
+	{#if data.session}
+		<p>Welcome {data.session.user.email}</p>
+		<form action="/logout" method="POST">
+			<button type="submit">Logout</button>
+		</form>
+	{:else}
+		<a href="/login">Login</a>
+		<a href="/register">Register</a>
+	{/if}
+</main>
